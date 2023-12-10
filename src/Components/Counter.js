@@ -1,37 +1,29 @@
-import { useState } from "react";
 const Counter = (props) => {
-  const { foodname, setCartdata, cartdata } = props;
+  const { foodname,cartdata,add,sub} = props;
   // console.log(props.foodname)
-  const total = cartdata[foodname] || 0;
+  const currentValue = cartdata[foodname] || 0;
   //const [cartdata, setCartdata] = useState({"briyani":1});
 
-  const add = () => {
-    setCartdata({
-      ...cartdata,
-      [foodname]: total + 1,
-    });
+  // const add = () => {
+  //   setCartdata({
+  //     ...cartdata,
+  //     [foodname]: total + 1,
+  //   });
+  // };
+  function Addition() {
+    return add(foodname)
   };
-  const sub = () => {
-    if(total == 1)
-    {
-      setCartdata({
-        ...cartdata,
-        [foodname]: undefined,
-      });
-    }
-    else{
-    setCartdata({
-      ...cartdata,
-      [foodname]: total - 1,
-    });
-  }
-  };
+  const Subract = () => sub(foodname);
+  //const Subract = () => add(foodname);
+
+
+  
   return (
     <div>
-      <button onClick={add}>Add</button>
-      {total}
-      <button onClick={sub} disabled={total <= 0 ? true : false}>
-        Subract
+      <button onClick={Addition}>+</button>
+      {currentValue}
+      <button onClick={Subract} disabled={currentValue <= 0 ? true : false}>
+        -
       </button>
     </div>
   );

@@ -1,4 +1,4 @@
-import Fooditem from "./fooditems";
+import Fooditem from "./foodItems";
 
 const menuData = [
   {
@@ -29,7 +29,7 @@ const menuData = [
 ];
 
 export default function Foodlist(props) {
-  const {cartdata,setCartdata}= props;
+  const {cartdata,setCartdata,add,sub}= props;
 
   return (
     <div className="food-list">
@@ -38,6 +38,8 @@ export default function Foodlist(props) {
           <Fooditem
             cartdata = {cartdata}
             setCartdata ={setCartdata}
+            add ={add}
+            sub={sub}
             key={menu.id}
             foodname={menu.name}
             rating={menu.ratings}
