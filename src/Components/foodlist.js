@@ -29,7 +29,7 @@ const menuData = [
 ];
 
 export default function Foodlist(props) {
-  const {cartdata,setCartdata,add,sub}= props;
+  const {cartdata,add,sub}= props;
 
   return (
     <div className="food-list">
@@ -37,7 +37,6 @@ export default function Foodlist(props) {
         return (
           <Fooditem
             cartdata = {cartdata}
-            setCartdata ={setCartdata}
             add ={add}
             sub={sub}
             key={menu.id}

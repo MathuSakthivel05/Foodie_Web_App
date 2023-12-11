@@ -20,11 +20,15 @@ const Counter = (props) => {
   
   return (
     <div>
+      {currentValue === 0 ? (<button onClick={Addition}>Add</button>):(
+      <div>  
       <button onClick={Addition}>+</button>
-      {currentValue}
+      <span>{currentValue}</span>
       <button onClick={Subract} disabled={currentValue <= 0 ? true : false}>
         -
       </button>
+      </div>
+      )}
     </div>
   );
 };

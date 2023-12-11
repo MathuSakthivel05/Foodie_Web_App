@@ -2,7 +2,7 @@ import Counter from "./Counter";
 import "./fooditem.css";
 
 export default function FoodItem(props) {
- const {cartdata,setCartdata,foodname,ratings,pricing,add,sub} = props;
+ const {cartdata,foodname,ratings,add,sub} = props;
 
   return (
     
@@ -15,7 +15,6 @@ export default function FoodItem(props) {
         <p>
           <Counter
             cartdata={cartdata}
-            setCartdata={setCartdata}
             foodname={foodname}
             add ={add}
             sub={sub}
