@@ -29,7 +29,7 @@ const menuData = [
 ];
 
 export default function Foodlist(props) {
-  const {cartdata,add,sub}= props;
+  const {cartdata,add,sub,pricing}= props;
 
   return (
     <div className="food-list">

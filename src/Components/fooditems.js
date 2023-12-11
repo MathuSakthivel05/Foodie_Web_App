@@ -2,7 +2,7 @@ import Counter from "./Counter";
 import "./fooditem.css";
 
 export default function FoodItem(props) {
- const {cartdata,foodname,ratings,add,sub} = props;
+ const {cartdata,foodname,ratings,add,sub,pricing} = props;
 
   return (
     
