@@ -4,35 +4,13 @@ import Foodlist from "./Components/foodlist";
 import Restaurantdetails from "./Components/restaurantDetails";
 import Cart from "./Components/cart";
 import { useReducer } from "react";
+import Reducer from "./Components/manageCart";
 
 function App() {
   //const [cartdata,setCartdata] = useState({})
-  function reducer(state, action) {
-    switch (action.type) {
-      case "inc": {
-        const currentValue = state[action.value] || 0;
-        return {
-          ...state,
-          [action.value]: currentValue + 1,
-        };
-      }
-      case "dec": {
-        const currentValue = state[action.value] || 0;
-        if (currentValue === 1) {
-          return {
-            ...state,
-            [action.value]: 0,
-          };
-        } else {
-          return {
-            ...state,
-            [action.value]: currentValue - 1,
-          };
-        }
-      }
-    }
-  }
-  const [cartdata, dispatch] = useReducer(reducer, {});
+  
+  const [cartdata, dispatch] = useReducer(Reducer, {});
+
 
   const add = (food) => {
     dispatch({ type: "inc", value: food });
@@ -68,6 +46,7 @@ function App() {
 
   return (
     <div className="App">
+      <Reducer/>
       <Cart cartdata={cartdata}/>
       <Foodlist cartdata={cartdata} add={add} sub={sub} />
     </div>
