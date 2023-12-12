@@ -9,14 +9,14 @@ import Reducer from "./Components/manageCart";
 function App() {
   //const [cartdata,setCartdata] = useState({})
   
-  const [cartdata, dispatch] = useReducer(Reducer, {});
+  const [cartdata, dispatch] = useReducer(Reducer, [{}]);
 
 
-  const add = (food) => {
-    dispatch({ type: "inc", value: food });
+  const add = (foodname) => {
+    dispatch({ type: "inc", value: foodname });
   };
-  const sub = (food) => {
-    dispatch({ type: "dec", value: food });
+  const sub = (foodname) => {
+    dispatch({ type: "dec", value: foodname });
   };
   // const add = (food) => {
   //   const currentValue = cartdata[food] || 0;
@@ -43,12 +43,14 @@ function App() {
   //   });
   // }
   // };
+  
 
   return (
     <div className="App">
       <Reducer/>
       <Cart cartdata={cartdata}/>
-      <Foodlist cartdata={cartdata} add={add} sub={sub} />
+      <Foodlist cartdata={cartdata} add={add} sub={sub} 
+      />
     </div>
   );
 }

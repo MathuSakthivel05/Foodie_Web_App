@@ -1,22 +1,22 @@
-const reducer = (state, action) => {
+const reducer = (cartdata, action) => {
     switch (action.type) {
       case "inc": {
-        const currentValue = state[action.value] || 0;
-        return {
-          ...state,
-          [action.value]: currentValue + 1,
-        };
+        const currentValue = cartdata[action.value] || 0;
+        return [
+          ...cartdata,
+           currentValue + 1,
+        ];
       }
       case "dec": {
-        const currentValue = state[action.value] || 0;
+        const currentValue = cartdata[action.value] || 0;
         if (currentValue === 1) {
           return {
-            ...state,
+            ...cartdata,
             [action.value]: 0,
           };
         } else {
           return {
-            ...state,
+            ...cartdata,
             [action.value]: currentValue - 1,
           };
         }
