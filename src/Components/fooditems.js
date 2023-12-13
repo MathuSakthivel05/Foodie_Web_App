@@ -18,7 +18,6 @@ export default function FoodItem(props) {
             foodname={foodname}
             add ={add}
             sub={sub}
-            pricing={pricing}
           />
         </p>
       )}
