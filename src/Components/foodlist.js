@@ -29,16 +29,15 @@ const menuData = [
 ];
 
 export default function Foodlist(props) {
-  const {cartdata,add,sub,pricing}= props;
+
+
+menuData.find((menu) => menu.pricing)
 
   return (
     <div className="food-list">
       {menuData.map((menu) => {
         return (
           <Fooditem
-            cartdata = {cartdata}
-            add ={add}
-            sub={sub}
             key={menu.id}
             foodname={menu.name}
             rating={menu.ratings}

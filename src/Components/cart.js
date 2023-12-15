@@ -1,5 +1,6 @@
 export default function Cart(props){
-   const {cartdata} = props ;
+    const cartdata ={}
+   //const {cartdata} = props ;
    let cartTotal = Object.values(cartdata) ; 
     return (
         <header>

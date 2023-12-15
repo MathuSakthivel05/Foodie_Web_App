@@ -5,19 +5,21 @@ import Restaurantdetails from "./Components/restaurantDetails";
 import Cart from "./Components/cart";
 import { useReducer } from "react";
 import Reducer from "./Components/manageCart";
+import { Provider } from "react-redux";
+import Store from  "./Store";
 
 function App() {
   //const [cartdata,setCartdata] = useState({})
   
-  const [cartdata, dispatch] = useReducer(Reducer, {});
+  // const [cartdata, dispatch] = useReducer(Reducer, {});
 
-
-  const add = (food) => {
-    dispatch({ type: "inc", value: food });
-  };
-  const sub = (food) => {
-    dispatch({ type: "dec", value: food });
-  };
+  
+  // const add = (food) => {
+  //   dispatch({ type: "inc", value: food });
+  // };
+  // const sub = (food) => {
+  //   dispatch({ type: "dec", value: food });
+  // };
   // const add = (food) => {
   //   const currentValue = cartdata[food] || 0;
   //   setCartdata({
@@ -46,9 +48,13 @@ function App() {
 
   return (
     <div className="App">
+      <Provider store={Store}>
+      <div>
       <Reducer/>
-      <Cart cartdata={cartdata}/>
-      <Foodlist cartdata={cartdata} add={add} sub={sub} />
+      <Cart />
+      <Foodlist   />
+      </div>
+      </Provider>
     </div>
   );
 }
